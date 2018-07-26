@@ -1,4 +1,4 @@
 # learn-vue
 Exercises I've done to learn Vue.js
 
-![cheatsheet](https://imgur.com/jYcutu8)
+![cheatsheet](https://i.imgur.com/jYcutu8.png)
