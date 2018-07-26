@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://localhost:8098"></script>
+  </head>
+  <body>
+
+    <div id="root">
+      <h1> All Tasks </h1>
+      <ul>
+        <li v-for="task in tasks"><input type="checkbox" v-model="task.completed"/>{{ task.description }}</li>
+      </ul>
+      <h1> Incomplete Tasks </h1>
+      <ul>
+        <li v-for="task in tasks" v-if="!task.completed" v-text="task.description"></li>
+      </ul>
+      <h1> Completed Tasks </h1>
+      <ul>
+        <li v-for="task in tasks" v-if="task.completed" v-text="task.description"></li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: '#root',
+        data: {
+          tasks: [
+            { description: 'Go To The Store', completed: true },
+            { description: 'Finish Screencast', completed: false },
+            { description: 'Make Donation', completed: false },
+            { description: 'Clear Inbox', completed: false },
+            { description: 'Make Diner', completed: false },
+            { description: 'Clean Room', completed: true }
+          ]
+        }
+      })
+    </script>
+
+  </body>
+</html>
